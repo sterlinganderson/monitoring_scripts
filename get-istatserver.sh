@@ -182,7 +182,7 @@ istat_pls() {
   $sh_c "cd istatserverlinux && make install > /dev/null"
 
   echo "adding boot item"
-  $sh_c "cp istatserverlinux/resource/istatserver.service /etc/systemd/system/istatserver.service"
+  $sh_c "cp istatserverlinux/resource/systemd/istatserver.service /etc/systemd/system/istatserver.service"
   $sh_c "service istatserver start"
 
   echo "Cleaning up"
