@@ -59,9 +59,6 @@ we_did_it() {
   echo "Make sure to take a look at the documentation at:"
   echo "https://bjango.com/help/istat3/istatserverlinux/"
   echo
-  echo "Learn how to run istatserver at boot:"
-  echo "https://github.com/bjango/istatserverlinux#starting-istat-server-at-boot"
-  echo
 }
 
 istat_pls() {
@@ -181,9 +178,10 @@ istat_pls() {
   $sh_c "cd istatserverlinux && make > /dev/null"
   $sh_c "cd istatserverlinux && make install > /dev/null"
 
-  echo "adding boot item"
+  echo "Adding boot item and starting"
   $sh_c "cp istatserverlinux/resource/systemd/istatserver.service /etc/systemd/system/istatserver.service"
-  $sh_c "service istatserver start"
+  $sh_c "systemctl enable istatserver.service"
+  $sh_c "systemctl start istatserver.service"
 
   echo "Cleaning up"
   $sh_c "rm -r ./istatserverlinux > /dev/null"
