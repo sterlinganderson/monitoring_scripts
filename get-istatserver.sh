@@ -2,9 +2,10 @@
 set -e
 
 # This script is meant for quick & easy install via:
-#   $ curl -fsSL https://raw.githubusercontent.com/bjango/istatserverlinux/master/get-istatserver.sh
+#   $ curl -fsSL https://raw.githubusercontent.com/strlng/monitoring_scripts/master/get-istatserver.sh
 #   $ sh get-istatserver.sh
 #
+#   nearly 100% copied from https://github.com/bjango/istatserverlinux/blob/master/get-istatserver.sh
 
 command_exists() {
   command -v "$@" > /dev/null 2>&1
